@@ -29,13 +29,13 @@ registerForm =new FormGroup(
       lastName: this.registerForm.get('lastName').value,
       email: this.registerForm.get('email').value,
       password: this.registerForm.get('password').value,
-      confirmPassword: this.registerForm.get('confirmPassword').value,
+      confirmPassword: this.registerForm.get('confirmPassword').value
 
     }
 
     this.employeeService.createEmployee(body).subscribe( data =>{
       console.log(data);
-      this.goToEmployeeList();
+     
     },
     error => console.log(error));
   }
@@ -46,7 +46,7 @@ getEmployee list
     this.getEmployees();
   }
 
-private getEmployees(){
+ getEmployees(){
     this.employeeService.getEmployeesList().subscribe(data => {
       this.employees = data;
       console.log("------------", this.employees);
